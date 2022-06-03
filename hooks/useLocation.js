@@ -15,7 +15,7 @@ const useLocation=()=>{
             if(!granted){
                 return;
             }else{
-                const result=location.getLastKnownPositionAsync();
+                const result=location.getCurrentPositionAsync({});
                 const lat=(await result).coords.latitude;
                 const lon=(await result).coords.longitude;
                 setLocation({lat,lon})            

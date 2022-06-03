@@ -2,10 +2,10 @@ import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 import React from 'react';
 
 
-export default function SaveButton({title,onPress}) {
+export default function SaveButton({title,onPress,style,textcolor}) {
   return (
-  <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={styles.text}>
+  <TouchableOpacity onPress={onPress} style={[styles.container,style]}>
+      <Text style={[styles.text,textcolor]}>
           {title}
       </Text>
       
@@ -15,17 +15,19 @@ export default function SaveButton({title,onPress}) {
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:"#1b1b1b",
-
-        height:38,
-        borderRadius:20,
+        // backgroundColor:"#8d98f2",
+        backgroundColor:"#ffffff",
+        height:49,
+        borderRadius:14,
         width:"100%",
         justifyContent:"center",
-        alignItems:"center"
+        
     },
     text:{
-        fontSize:20,
+        fontSize:23,
         fontFamily:"Roboto",
-        color:"white"
+        color:"black",
+        alignSelf:"center",
+        opacity:0.87
     }
 });

@@ -26,6 +26,7 @@ export default function AppCard({ info, index, renderRightAction }) {
   
 
   const openMap = async () => {
+    // console.log("BYREEEEEE",info.userLocation)
     const link = `https://www.google.com/maps/search/?api=1&query=${info.userLocation.lat}%2C${info.userLocation.lon}`;
     try {
       Linking.openURL(link);
@@ -45,7 +46,6 @@ export default function AppCard({ info, index, renderRightAction }) {
     const result =await locationApi.deleteLocation(info._id);
     console.log(result);
     locationContext.setlocation(filtred);
-    // await Cache2.deleteLocation(index);
     alert("Deleted!");
   };
 
@@ -56,7 +56,7 @@ export default function AppCard({ info, index, renderRightAction }) {
         <View style={styles.container}>
           <Image
             style={styles.image}
-            source={require("../images/image2.jpg")}
+            source={require("../images/image4.jpg")}
           />
           <View style={styles.detailContainer}>
             <View style={styles.text}>
@@ -67,20 +67,22 @@ export default function AppCard({ info, index, renderRightAction }) {
               <Feather
                 name="more-vertical"
                 size={24}
-                color="black"
+                color="#F0F0F0"
                 onPress={Deletelocation}
               />
             </TouchableOpacity>
           </View>
         </View>
       </TouchableOpacity>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     borderRadius: 30,
-    backgroundColor: "#424242",
+    // backgroundColor: "#181818",
+    backgroundColor: "#5c6bc0",
     overflow: "hidden",
     margin: 8,
     flexDirection: "column",
@@ -92,8 +94,8 @@ const styles = StyleSheet.create({
       flexDirection:"row"
   },
   image: {
-    height: 170,
     width: "100%",
+    height:150
   },
   more: {
       padding:10

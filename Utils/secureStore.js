@@ -4,8 +4,8 @@ const key ='UserId';
 
 const storeToken=async(authToken)=>{
     try{
-        console.log(authToken);
-     await secureStore.setItemAsync(key,authToken);
+        // console.log(authToken);
+        await secureStore.setItemAsync(key,authToken);
     }
     catch(error){
         console.log(error)
